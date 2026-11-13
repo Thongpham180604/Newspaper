@@ -1,0 +1,98 @@
+{
+  "countries": [
+    { "code": "vn", "vi": "Việt Nam", "en": "Vietnam", "flag": "🇻🇳" },
+    { "code": "us", "vi": "Mỹ", "en": "United States", "flag": "🇺🇸" },
+    { "code": "cn", "vi": "Trung Quốc", "en": "China", "flag": "🇨🇳" },
+    { "code": "jp", "vi": "Nhật Bản", "en": "Japan", "flag": "🇯🇵" },
+    { "code": "kr", "vi": "Hàn Quốc", "en": "South Korea", "flag": "🇰🇷" },
+    { "code": "au", "vi": "Úc", "en": "Australia", "flag": "🇦🇺" },
+    { "code": "uk", "vi": "Anh", "en": "United Kingdom", "flag": "🇬🇧" },
+    { "code": "de", "vi": "Đức", "en": "Germany", "flag": "🇩🇪" },
+    { "code": "fr", "vi": "Pháp", "en": "France", "flag": "🇫🇷" },
+    { "code": "ru", "vi": "Nga", "en": "Russia", "flag": "🇷🇺" },
+    { "code": "in", "vi": "Ấn Độ", "en": "India", "flag": "🇮🇳" },
+    { "code": "sg", "vi": "Singapore", "en": "Singapore", "flag": "🇸🇬" }
+  ],
+  "topics": [
+    { "code": "news", "vi": "Thời sự", "en": "News" },
+    { "code": "world", "vi": "Thế giới", "en": "World" },
+    { "code": "business", "vi": "Kinh tế", "en": "Business" },
+    { "code": "tech", "vi": "Công nghệ", "en": "Technology" },
+    { "code": "science", "vi": "Khoa học", "en": "Science" },
+    { "code": "health", "vi": "Sức khỏe", "en": "Health" },
+    { "code": "sports", "vi": "Thể thao", "en": "Sports" },
+    { "code": "culture", "vi": "Văn hóa – Giải trí", "en": "Culture" }
+  ],
+  "feeds": [
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "news", "url": "https://vnexpress.net/rss/thoi-su.rss" },
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "world", "url": "https://vnexpress.net/rss/the-gioi.rss" },
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "business", "url": "https://vnexpress.net/rss/kinh-doanh.rss" },
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "tech", "url": "https://vnexpress.net/rss/so-hoa.rss" },
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "science", "url": "https://vnexpress.net/rss/khoa-hoc.rss" },
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "health", "url": "https://vnexpress.net/rss/suc-khoe.rss" },
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "sports", "url": "https://vnexpress.net/rss/the-thao.rss" },
+    { "country": "vn", "source": "VnExpress", "lang": "vi", "topic": "culture", "url": "https://vnexpress.net/rss/giai-tri.rss" },
+    { "country": "vn", "source": "VnExpress International", "lang": "en", "topic": "news", "url": "https://e.vnexpress.net/rss/news.rss" },
+    { "country": "vn", "source": "Tuổi Trẻ", "lang": "vi", "topic": "news", "url": "https://tuoitre.vn/rss/thoi-su.rss" },
+    { "country": "vn", "source": "Thanh Niên", "lang": "vi", "topic": "news", "url": "https://thanhnien.vn/rss/thoi-su.rss" },
+
+    { "country": "us", "source": "NPR", "lang": "en", "topic": "news", "url": "https://feeds.npr.org/1001/rss.xml" },
+    { "country": "us", "source": "NPR", "lang": "en", "topic": "business", "url": "https://feeds.npr.org/1006/rss.xml" },
+    { "country": "us", "source": "NPR", "lang": "en", "topic": "health", "url": "https://feeds.npr.org/1128/rss.xml" },
+    { "country": "us", "source": "The New York Times", "lang": "en", "topic": "news", "url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml" },
+    { "country": "us", "source": "The New York Times", "lang": "en", "topic": "tech", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml" },
+    { "country": "us", "source": "The New York Times", "lang": "en", "topic": "science", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml" },
+    { "country": "us", "source": "The New York Times", "lang": "en", "topic": "sports", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml" },
+    { "country": "us", "source": "The New York Times", "lang": "en", "topic": "culture", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml" },
+    { "country": "us", "source": "CNBC", "lang": "en", "topic": "business", "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html" },
+
+    { "country": "cn", "source": "China Daily", "lang": "en", "topic": "news", "url": "https://www.chinadaily.com.cn/rss/china_rss.xml" },
+    { "country": "cn", "source": "China Daily", "lang": "en", "topic": "world", "url": "https://www.chinadaily.com.cn/rss/world_rss.xml" },
+    { "country": "cn", "source": "China Daily", "lang": "en", "topic": "business", "url": "https://www.chinadaily.com.cn/rss/bizchina_rss.xml" },
+    { "country": "cn", "source": "CGTN", "lang": "en", "topic": "news", "url": "https://www.cgtn.com/subscribe/rss/section/china.xml" },
+    { "country": "cn", "source": "South China Morning Post", "lang": "en", "topic": "news", "url": "https://www.scmp.com/rss/4/feed" },
+
+    { "country": "jp", "source": "NHK", "lang": "ja", "topic": "news", "url": "https://www3.nhk.or.jp/rss/news/cat0.xml" },
+    { "country": "jp", "source": "The Japan Times", "lang": "en", "topic": "news", "url": "https://www.japantimes.co.jp/feed/" },
+    { "country": "jp", "source": "Japan Today", "lang": "en", "topic": "news", "url": "https://japantoday.com/feed" },
+
+    { "country": "kr", "source": "Yonhap", "lang": "en", "topic": "news", "url": "https://en.yna.co.kr/RSS/news.xml" },
+    { "country": "kr", "source": "The Hankyoreh", "lang": "en", "topic": "news", "url": "https://english.hani.co.kr/rss/" },
+    { "country": "kr", "source": "The Korea Times", "lang": "en", "topic": "news", "url": "https://www.koreatimes.co.kr/www/rss/nation.xml" },
+
+    { "country": "au", "source": "ABC News", "lang": "en", "topic": "news", "url": "https://www.abc.net.au/news/feed/51120/rss.xml" },
+    { "country": "au", "source": "The Sydney Morning Herald", "lang": "en", "topic": "news", "url": "https://www.smh.com.au/rss/feed.xml" },
+    { "country": "au", "source": "The Guardian Australia", "lang": "en", "topic": "news", "url": "https://www.theguardian.com/australia-news/rss" },
+
+    { "country": "uk", "source": "BBC News", "lang": "en", "topic": "news", "url": "https://feeds.bbci.co.uk/news/uk/rss.xml" },
+    { "country": "uk", "source": "BBC News", "lang": "en", "topic": "world", "url": "https://feeds.bbci.co.uk/news/world/rss.xml" },
+    { "country": "uk", "source": "BBC News", "lang": "en", "topic": "business", "url": "https://feeds.bbci.co.uk/news/business/rss.xml" },
+    { "country": "uk", "source": "BBC News", "lang": "en", "topic": "tech", "url": "https://feeds.bbci.co.uk/news/technology/rss.xml" },
+    { "country": "uk", "source": "BBC News", "lang": "en", "topic": "science", "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml" },
+    { "country": "uk", "source": "BBC News", "lang": "en", "topic": "health", "url": "https://feeds.bbci.co.uk/news/health/rss.xml" },
+    { "country": "uk", "source": "BBC Sport", "lang": "en", "topic": "sports", "url": "https://feeds.bbci.co.uk/sport/rss.xml" },
+    { "country": "uk", "source": "BBC News", "lang": "en", "topic": "culture", "url": "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml" },
+    { "country": "uk", "source": "The Guardian", "lang": "en", "topic": "news", "url": "https://www.theguardian.com/uk-news/rss" },
+
+    { "country": "de", "source": "DW", "lang": "en", "topic": "news", "url": "https://rss.dw.com/rdf/rss-en-all" },
+    { "country": "de", "source": "tagesschau", "lang": "de", "topic": "news", "url": "https://www.tagesschau.de/xml/rss2/" },
+    { "country": "de", "source": "DER SPIEGEL", "lang": "de", "topic": "news", "url": "https://www.spiegel.de/schlagzeilen/index.rss" },
+
+    { "country": "fr", "source": "France 24", "lang": "en", "topic": "news", "url": "https://www.france24.com/en/france/rss" },
+    { "country": "fr", "source": "France 24", "lang": "en", "topic": "world", "url": "https://www.france24.com/en/rss" },
+    { "country": "fr", "source": "Le Monde", "lang": "fr", "topic": "news", "url": "https://www.lemonde.fr/rss/une.xml" },
+    { "country": "fr", "source": "RFI", "lang": "fr", "topic": "world", "url": "https://www.rfi.fr/fr/rss" },
+
+    { "country": "ru", "source": "TASS", "lang": "en", "topic": "news", "url": "https://tass.com/rss/v2.xml" },
+    { "country": "ru", "source": "The Moscow Times", "lang": "en", "topic": "news", "url": "https://www.themoscowtimes.com/rss/news" },
+    { "country": "ru", "source": "Meduza", "lang": "en", "topic": "news", "url": "https://meduza.io/rss/en/all" },
+
+    { "country": "in", "source": "The Hindu", "lang": "en", "topic": "news", "url": "https://www.thehindu.com/news/national/feeder/default.rss" },
+    { "country": "in", "source": "The Times of India", "lang": "en", "topic": "news", "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms" },
+    { "country": "in", "source": "The Indian Express", "lang": "en", "topic": "news", "url": "https://indianexpress.com/feed/" },
+
+    { "country": "sg", "source": "CNA", "lang": "en", "topic": "news", "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=10416" },
+    { "country": "sg", "source": "CNA", "lang": "en", "topic": "world", "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml" },
+    { "country": "sg", "source": "The Straits Times", "lang": "en", "topic": "news", "url": "https://www.straitstimes.com/news/singapore/rss.xml" }
+  ]
+}
