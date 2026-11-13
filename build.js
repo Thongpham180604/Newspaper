@@ -113,6 +113,7 @@ function renderStandalone(index) {
   const tpl = fs.readFileSync(path.join(ROOT, 'src', 'index.html'), 'utf8');
   const css = fs.readFileSync(path.join(ROOT, 'src', 'style.css'), 'utf8');
   const js = fs.readFileSync(path.join(ROOT, 'src', 'app.js'), 'utf8');
+  new (require('vm').Script)(js, { filename: 'src/app.js' }); // fail the build on a syntax error
   const inline = {};
   for (const d of index.days.slice(0, INLINE_DAYS)) inline[d.date] = readJSON(path.join(DAYS, `${d.date}.json`), null);
   for (const day of Object.values(inline)) if (day) delete day.feeds;

@@ -33,6 +33,7 @@
   var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
                 set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
 
+  window.__imgErr = function (el) { var r = el.closest('.row'); if (r) r.classList.add('noimg'); el.remove(); };
   var NEWS = window.__NEWS__ || null;
   var state = { lang: store.get('lang') || 'vi', date: null, route: [], q: '' };
   var dayCache = {};
@@ -83,7 +84,7 @@
   // ---------- rendering atoms ----------
   function img(it, cls) {
     if (!it.img) return '';
-    return '<img class="thumb ' + (cls || '') + '" src="' + esc(it.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="var r=this.closest('.row');if(r)r.classList.add('noimg');this.remove()">';
+    return '<img class="thumb ' + (cls || '') + '" src="' + esc(it.img) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="__imgErr(this)">';
   }
   function badges(it, v) {
     var b = '';
