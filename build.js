@@ -7,7 +7,7 @@
 // Then run `node split/split.js` to produce the multi-file site in public/.
 const fs = require('fs');
 const path = require('path');
-const { fetchFeed } = require('./lib/feeds');
+const { fetchFeed, stripHtml } = require('./lib/feeds');
 const { refineTopic } = require('./lib/classify');
 const { translateItems } = require('./lib/translate');
 
@@ -45,6 +45,21 @@ async function pool(list, n, fn) {
   return out;
 }
 
+function fixDate(it) {
+  // some feeds label local time as GMT; a date in the future is corrected for the outlet's offset, else clamped
+  const now = Date.now();
+  if (it.p && Date.parse(it.p) > now + 10 * 60000) {
+    const off = { vn: 7, cn: 8, sg: 8, jp: 9, kr: 9, au: 11, in: 5.5, ru: 3, de: 1, fr: 1 }[it.c] || 0;
+    const fixed = Date.parse(it.p) - off * 3600000;
+    it.p = new Date(fixed > now + 10 * 60000 ? now : fixed).toISOString();
+  }
+}
+function tidy(it) {
+  it.ti = stripHtml(it.ti);
+  it.su = stripHtml(it.su);
+  fixDate(it);
+}
+
 async function fetchAll(date) {
   const file = path.join(DAYS, `${date}.json`);
   const day = readJSON(file, { date, items: [], feeds: [] });
@@ -77,6 +92,7 @@ async function fetchAll(date) {
       for (const it of items) {
         if (known.has(it.id) || byId.has(it.id)) continue;
         it.t = refineTopic(it);
+        tidy(it);
         it.f = new Date().toISOString();
         byId.set(it.id, it);
         added++;
@@ -89,6 +105,7 @@ async function fetchAll(date) {
     }
     await sleep(800);
   } });
+  for (const it of byId.values()) tidy(it);
   day.items = [...byId.values()].sort((a, b) => (b.p || b.f).localeCompare(a.p || a.f));
   day.feeds = status;
   day.updated = new Date().toISOString();
