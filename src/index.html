@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nhật Báo Thế Giới · The World Daily</title>
+<meta name="description" content="Tin tức mỗi ngày từ 12 quốc gia, song ngữ Việt – Anh. Daily news from 12 countries in Vietnamese and English.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23b3261e'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Georgia,serif' font-weight='700'%3EN%3C/text%3E%3C/svg%3E">
+<style id="app-css">/*__CSS__*/</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Bỏ qua tới nội dung</a>
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span id="today" class="today"></span>
+    <div class="tools">
+      <label class="archive"><span data-i18n="edition">Số báo</span>
+        <select id="daySel" aria-label="Archive"></select>
+      </label>
+      <form id="searchForm" class="search" role="search">
+        <input id="q" type="search" autocomplete="off" data-i18n-ph="searchPh" placeholder="Tìm tin…">
+        <button type="submit" aria-label="Search">⌕</button>
+      </form>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="vi" type="button">VI</button><button data-lang="en" type="button">EN</button>
+      </div>
+      <button id="themeBtn" class="icon" type="button" aria-label="Theme">◐</button>
+    </div>
+  </div>
+</div>
+<header class="masthead wrap">
+  <a href="#/" class="brand">
+    <span class="brand-name" data-i18n="brand">Nhật Báo Thế Giới</span>
+  </a>
+  <p class="tagline" data-i18n="tagline">Tin tức mỗi ngày từ 12 quốc gia · Song ngữ Việt – Anh</p>
+</header>
+<nav class="nav" aria-label="Countries">
+  <div class="wrap nav-in" id="countryNav"></div>
+</nav>
+<nav class="subnav" aria-label="Topics">
+  <div class="wrap nav-in" id="topicNav"></div>
+</nav>
+<main id="main" class="wrap" tabindex="-1"><p class="loading">…</p></main>
+<footer class="footer">
+  <div class="wrap">
+    <p class="foot-brand" data-i18n="brand">Nhật Báo Thế Giới</p>
+    <p data-i18n="about">Trang tổng hợp cá nhân. Tiêu đề và tóm tắt lấy từ RSS chính thức của từng tờ báo, kèm đường dẫn tới bài gốc. Bản dịch (nếu có) là dịch máy, hãy đối chiếu với bài gốc.</p>
+    <p id="footMeta" class="muted"></p>
+  </div>
+</footer>
+<script id="app-data">/*__DATA__*/</script>
+<script id="app-js">/*__JS__*/</script>
+</body>
+</html>

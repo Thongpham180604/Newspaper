@@ -1,16 +1,16 @@
 {
   "name": "newspaper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Web báo tổng hợp song ngữ Việt–Anh",
+  "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js && node split/split.js",
+    "preview": "node build.js --no-fetch && node split/split.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
     "fast-xml-parser": "^5.12.1"
-  }
+  },
+  "private": true
 }

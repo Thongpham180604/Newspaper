@@ -20,7 +20,7 @@ const INLINE_DAYS = +(process.env.INLINE_DAYS || 7);
 const PER_FEED = +(process.env.PER_FEED || 20);
 const TZ = 'Asia/Ho_Chi_Minh';
 
-const sources = JSON.parse(fs.readFileSync(path.join(ROOT, 'sources.json'), 'utf8'));
+const sources = JSON.parse(fs.readFileSync(process.env.SOURCES_FILE || path.join(ROOT, 'sources.json'), 'utf8'));
 
 function today() {
   if (process.env.BUILD_DATE) return process.env.BUILD_DATE;

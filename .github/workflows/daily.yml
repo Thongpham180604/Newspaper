@@ -1,0 +1,58 @@
+name: Cập nhật tin / Update news
+
+on:
+  schedule:
+    # 06:00, 12:00, 18:00, 00:00 giờ Việt Nam (UTC+7)
+    - cron: '0 23,5,11,17 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['data/**', 'README.md']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Lấy tin, dịch, dựng trang / Fetch, translate, build
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}
+        run: |
+          node build.js
+          node split/split.js
+      - name: Lưu dữ liệu ngày vào repo / Commit the day's data
+        run: |
+          git config user.name "news-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "no data changes"; exit 0; fi
+          git commit -m "Tin ngày $(TZ=Asia/Ho_Chi_Minh date +%F) ($(TZ=Asia/Ho_Chi_Minh date +%H:%M))"
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
