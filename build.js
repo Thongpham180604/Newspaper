@@ -34,6 +34,8 @@ function writeJSON(f, obj) {
   fs.writeFileSync(f, JSON.stringify(obj));
 }
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
 async function pool(list, n, fn) {
   const out = new Array(list.length);
   let i = 0;
@@ -54,10 +56,23 @@ async function fetchAll(date) {
   }
   const byId = new Map(day.items.map((x) => [x.id, x]));
   const status = [];
-  await pool(sources.feeds, 8, async (feed) => {
+  // one queue per host, so a site is never hit by several requests at once (avoids HTTP 429)
+  const hosts = new Map();
+  for (const feed of sources.feeds) {
+    const h = new URL(feed.url).host;
+    if (!hosts.has(h)) hosts.set(h, []);
+    hosts.get(h).push(feed);
+  }
+  const fetchOne = async (feed) => {
+    try { return await fetchFeed(feed); } catch (err) {
+      await sleep(4000); // one retry for rate limits and timeouts
+      return fetchFeed(feed, { timeoutMs: 30000 });
+    }
+  };
+  await pool([...hosts.values()], 8, async (group) => { for (const feed of group) {
     const t0 = Date.now();
     try {
-      const items = (await fetchFeed(feed)).slice(0, PER_FEED);
+      const items = (await fetchOne(feed)).slice(0, PER_FEED);
       let added = 0;
       for (const it of items) {
         if (known.has(it.id) || byId.has(it.id)) continue;
@@ -72,7 +87,8 @@ async function fetchAll(date) {
       status.push({ url: feed.url, source: feed.source, ok: false, error: String(err.message || err) });
       console.log(`FAIL ${feed.country} ${feed.source} [${feed.topic}] ${feed.url}: ${err.message || err}`);
     }
-  });
+    await sleep(800);
+  } });
   day.items = [...byId.values()].sort((a, b) => (b.p || b.f).localeCompare(a.p || a.f));
   day.feeds = status;
   day.updated = new Date().toISOString();

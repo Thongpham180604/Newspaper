@@ -42,13 +42,13 @@
     { "country": "us", "source": "The New York Times", "lang": "en", "topic": "news", "url": "https://rss.nytimes.com/services/xml/rss/nyt/US.xml" },
     { "country": "us", "source": "The New York Times", "lang": "en", "topic": "tech", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml" },
     { "country": "us", "source": "The New York Times", "lang": "en", "topic": "science", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml" },
-    { "country": "us", "source": "The New York Times", "lang": "en", "topic": "sports", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml" },
+    { "country": "us", "source": "NPR", "lang": "en", "topic": "sports", "url": "https://feeds.npr.org/1055/rss.xml" },
     { "country": "us", "source": "The New York Times", "lang": "en", "topic": "culture", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml" },
     { "country": "us", "source": "CNBC", "lang": "en", "topic": "business", "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html" },
 
-    { "country": "cn", "source": "China Daily", "lang": "en", "topic": "news", "url": "https://www.chinadaily.com.cn/rss/china_rss.xml" },
-    { "country": "cn", "source": "China Daily", "lang": "en", "topic": "world", "url": "https://www.chinadaily.com.cn/rss/world_rss.xml" },
-    { "country": "cn", "source": "China Daily", "lang": "en", "topic": "business", "url": "https://www.chinadaily.com.cn/rss/bizchina_rss.xml" },
+    { "country": "cn", "source": "Global Times", "lang": "en", "topic": "news", "url": "https://www.globaltimes.cn/rss/outbrain.xml" },
+    { "country": "cn", "source": "CGTN", "lang": "en", "topic": "world", "url": "https://www.cgtn.com/subscribe/rss/section/world.xml" },
+    { "country": "cn", "source": "CGTN", "lang": "en", "topic": "business", "url": "https://www.cgtn.com/subscribe/rss/section/business.xml" },
     { "country": "cn", "source": "CGTN", "lang": "en", "topic": "news", "url": "https://www.cgtn.com/subscribe/rss/section/china.xml" },
     { "country": "cn", "source": "South China Morning Post", "lang": "en", "topic": "news", "url": "https://www.scmp.com/rss/4/feed" },
 
@@ -89,7 +89,8 @@
 
     { "country": "in", "source": "The Hindu", "lang": "en", "topic": "news", "url": "https://www.thehindu.com/news/national/feeder/default.rss" },
     { "country": "in", "source": "The Times of India", "lang": "en", "topic": "news", "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms" },
-    { "country": "in", "source": "The Indian Express", "lang": "en", "topic": "news", "url": "https://indianexpress.com/feed/" },
+    { "country": "in", "source": "NDTV", "lang": "en", "topic": "news", "url": "https://feeds.feedburner.com/ndtvnews-top-stories" },
+    { "country": "in", "source": "The Hindu", "lang": "en", "topic": "business", "url": "https://www.thehindu.com/business/feeder/default.rss" },
 
     { "country": "sg", "source": "CNA", "lang": "en", "topic": "news", "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=10416" },
     { "country": "sg", "source": "CNA", "lang": "en", "topic": "world", "url": "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml" },

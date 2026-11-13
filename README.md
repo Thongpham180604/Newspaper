@@ -2,7 +2,7 @@
 
 Web báo tổng hợp song ngữ Việt – Anh: tin mỗi ngày từ 12 nước (Việt Nam, Mỹ, Trung Quốc, Nhật, Hàn, Úc, Anh, Đức, Pháp, Nga, Ấn Độ, Singapore), chia theo quốc gia và chủ đề, có tìm kiếm và xem lại các số báo cũ.
 
-**Trang web:** https://thongpham180604.github.io/newspaper/
+**Trang web:** https://thongpham180604.github.io/Newspaper/
 
 ## Cách hoạt động
 - `sources.json`: danh sách nước, chủ đề và nguồn RSS của từng báo.
